@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 function StudentCard(props) {
   return (
-    <Card sx={{ minWidth: 300, margin: 2 }}>
+    <Card sx={{ minWidth: 300, margin: 2 }} variant="outlined">
       <cardContent>
         <Typography>{props.name}</Typography>
         <Typography>{props.department}</Typography>
