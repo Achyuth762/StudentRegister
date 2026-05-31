@@ -3,7 +3,6 @@ import StudentCard from "./components/StudentCard";
 import students from "./data/students";
 import { Button } from "@mui/material";
 import { useState } from "react";
-import Grid from "@mui/material/Grid";
 
 function App() {
   const [department, setDepartment] = useState("All");
@@ -28,18 +27,23 @@ function App() {
       <Button onClick={() => setDepartment("MBA")} variant="outlined">
         MBA
       </Button>
-
-      <Grid container spacing={0.5} style={{ marginTop: 20 }}>
+      <div
+        className="cards"
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+          marginTop: "20px",
+        }}
+      >
         {filteredStudents.map((student) => (
-          <Grid item xs={12} sm={6} md={4} lg={3}>
-            <StudentCard
-              name={student.name}
-              department={student.department}
-              year={student.year}
-            />
-          </Grid>
+          <StudentCard
+            name={student.name}
+            department={student.department}
+            year={student.year}
+          />
         ))}
-      </Grid>
+      </div>
     </div>
   );
 }
